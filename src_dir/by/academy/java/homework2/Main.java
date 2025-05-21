@@ -1,20 +1,20 @@
 package by.academy.java.homework2;
 
-public class Main {
-    static String name1;
-    static int size1;
-    static char sizeGlass1;
-    static boolean caffeine1;
-    static float price1;
-    static long barcode1;
+    public class Main {
+    public static String name1;
+    public static int size1;
+    public static char sizeGlass1;
+    public static boolean caffeine1;
+    public static float price1;
+    public static long barcode1;
 
 
-    static String name2;
-    static Integer size2;
-    static Character sizeGlass2;
-    static Boolean caffeine2;
-    static Float price2;
-    static Long barcode2;
+    public static String name2;
+    public static Integer size2;
+    public static Character sizeGlass2;
+    public static Boolean caffeine2;
+    public static Float price2;
+    public static Long barcode2;
 
     public static void main(String[] args ){
 
