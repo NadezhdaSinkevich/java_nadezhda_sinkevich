@@ -1,4 +1,4 @@
-package by.academy.java.homework4.cat;
+package by.academy.java.homework4.package2;
 
 import java.util.Objects;
 
@@ -6,16 +6,6 @@ public class Cat {
 
     private String name;
     private Integer age;
-
-    public Cat(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public Cat() {
-        name = "Cat";
-        age = 1;
-    }
 
     public String getName() {
         return name;
@@ -42,6 +32,12 @@ public class Cat {
     }
 
     //конструктор
+    /*
+    public Cat(String name,Integer age){
+        this.name = name;
+        this.age = age;
+    }
+    */
 
 
     //метод equals
@@ -52,8 +48,5 @@ public class Cat {
         return Objects.equals(name, cat.name) && Objects.equals(age, cat.age);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
-    }
+
 }
