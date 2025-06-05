@@ -8,20 +8,10 @@ import java.util.Random;
 
 public class Main {
     static public String symbols = "qwertyuiopasdfghjklzxcvbnm";
-    static public String symbolsInt = "1234567890";
     static public Random random = new Random();
     final static public int LENGTH_ELEMENT=7;
 
-    public static boolean isDouble(String str){
-        try {
-            Double.valueOf(str);
-        }
-        catch (Exception ex)
-        {
-            return false;
-        }
-        return true;
-    }
+
 
     public static String generateElement(String element) {
         String nameReturn = "";
@@ -44,20 +34,31 @@ public class Main {
     public static void main(String[] args){
 
         String [][] array = new String[10][10];
+        int count_third = 2;
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
 
-
                     int number = random.nextInt(2) + 1;
-                    switch (number) {
-                        case 1: {
-                            array[i][j] = generateElement(symbols);
-                            break;
-                        }
-                        case 2: {
-                            array[i][j] = generateElement(symbolsInt);
-                            break;
+                    if (j == count_third)
+                    {
+                        Double a = Math.random() +1;
+                        array[i][j] = a.toString().substring(0,LENGTH_ELEMENT);
+
+                        count_third += 3;
+                    }
+                    else {
+                        switch (number) {
+                            case 1: {
+                                array[i][j] = generateElement(symbols);
+                                break;
+                            }
+                            case 2: {
+
+                                Double a = Math.random() +1;
+                                array[i][j] = a.toString().substring(0,LENGTH_ELEMENT);
+                                break;
+                            }
                         }
                     }
 
@@ -65,6 +66,7 @@ public class Main {
 
 
             }
+            count_third=2;
         }
 
         System.out.println("исходная матрица");
@@ -77,32 +79,7 @@ public class Main {
         }
         System.out.println();
 
-        System.out.println("после проверки каждого 3-его на double");
 
-        for (int i = 0; i < 10; i++) {
-            for (int j = 2; j < 10; j+=3){
-
-                if (!isDouble(array[i][j])) {
-                //if (!array[i][j].matches("\\d+\\.\\d+")){
-
-                    Double b= Double.valueOf(generateElement(symbolsInt));
-                    array[i][j] = b.toString();
-
-                }
-                else {
-                    Double a = Double.valueOf(array[i][j]);
-                    array[i][j] = Double.toString(a);
-                }
-            }
-        }
-
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-
-                System.out.print(array[i][j]+" ");
-            }
-            System.out.println();
-        }
 
         System.out.println();
 
@@ -212,7 +189,7 @@ public class Main {
         System.out.println();
         System.out.println("массив чисел");
 
-        for (int i = 0; i < arrayNumbers.length; i++) {
+        for (int i = 0; i < countArrayNumbers; i++) {
             System.out.print(arrayNumbers[i]+"_");
 
         }
