@@ -121,7 +121,7 @@ public class Main {
         }
         System.out.println();
 
-        //положить строку диагоналей в массив
+
         String diagonalsMainSecondly;
         diagonalsMainSecondly = mainDiagonal.concat(secondlyDiagonal);
         diagonalsMainSecondly.trim();
